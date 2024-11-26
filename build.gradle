@@ -1,0 +1,33 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("io.micronaut.application") version "4.4.4"
+    id("io.micronaut.aot") version "4.4.4"
+}
+
+allprojects {
+    version = "1.0"
+    group = "org.joksin"
+
+    apply plugin: "com.github.johnrengelman.shadow"
+    apply plugin: "io.micronaut.application"
+    apply plugin: "io.micronaut.aot"
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        annotationProcessor("org.projectlombok:lombok")
+
+        compileOnly("org.projectlombok:lombok")
+    }
+
+    application {
+        mainClass = ""
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.toVersion("21")
+        targetCompatibility = JavaVersion.toVersion("21")
+    }
+}

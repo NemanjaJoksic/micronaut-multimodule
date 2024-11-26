@@ -1,0 +1,5 @@
+rootProject.name="micronaut-multimodule"
+
+include 'app-1'
+include 'app-2'
+include 'commons'
